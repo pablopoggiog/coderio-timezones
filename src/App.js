@@ -1,7 +1,16 @@
-import "./App.css";
+import styled from "styled-components";
+import { SearchBar } from "src/components";
 
-function App() {
-  return <div></div>;
-}
+const App = () => {
+  return (
+    <Container>
+      <SearchBar />
+    </Container>
+  );
+};
 
 export default App;
+
+const Container = styled.div`
+  text-align: center;
+`;
