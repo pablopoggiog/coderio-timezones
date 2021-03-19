@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import { SearchBar } from "src/components";
+import { SearchContextProvider } from "src/context/SearchContext";
 
 const App = () => {
   return (
-    <Container>
-      <SearchBar />
-    </Container>
+    <SearchContextProvider>
+      <Container>
+        <SearchBar />
+      </Container>
+    </SearchContextProvider>
   );
 };
 
