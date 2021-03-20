@@ -5,8 +5,17 @@ export const ZonesContext = createContext();
 export const ZonesContextProvider = ({ children }) => {
   const [zones, setZones] = useState([]);
 
+  useEffect(() => {
+    if (zones.length > 0) {
+      const timezones = zones.map((zone) => zone.timezone);
+      window.localStorage.setItem("timezones", JSON.stringify(timezones));
+    }
+  }, [zones]);
+
   const addZone = (newZone) => {
-    setZones((zones) => zones.concat(newZone));
+    if (!zones.find((zone) => zone.timezone === newZone.timezone)) {
+      setZones((zones) => zones.concat(newZone));
+    }
   };
 
   const removeZone = (zoneToRemove) => {
@@ -14,7 +23,22 @@ export const ZonesContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    console.log("the zones are ", zones);
+    const interval = setInterval(() => {
+      if (zones.length > 0) {
+        const newZones = zones.map((zone) => {
+          const time = new Date(zone.utc_datetime);
+
+          return {
+            ...zone,
+            utc_datetime: Date(time.setSeconds(time.getSeconds() + 5)),
+          };
+        });
+
+        setZones(newZones);
+      }
+    }, 5000);
+
+    return () => clearInterval(interval);
   }, [zones]);
 
   return (
