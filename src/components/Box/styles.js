@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import dots from "../../assets/dots.jpg";
+import dots from "src/assets/dots.jpg";
 
 const fadeIn = keyframes`
   from {

@@ -6,13 +6,6 @@ export const Container = styled.div`
   justify-content: flex-end;
   margin: 1em 0;
   width: 7em;
-
-  ${
-    "" /* @media all and (min-width: 620px) {
-    min-width: 200px;
-    width: 30%;
-  } */
-  }
 `;
 
 export const Button = styled.button`

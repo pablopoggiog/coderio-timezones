@@ -10,6 +10,7 @@ export const Boxes = () => {
     <Container>
       {zones &&
         zones.map(({ timezone, utc_datetime }) => {
+          // Formats the date and time
           const date = new Date(utc_datetime).toLocaleDateString();
           const time = new Date(utc_datetime).toLocaleTimeString("en-US", {
             timeZone: timezone,

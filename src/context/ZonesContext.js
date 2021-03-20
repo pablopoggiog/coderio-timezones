@@ -6,6 +6,7 @@ export const ZonesContextProvider = ({ children }) => {
   const [zones, setZones] = useState([]);
 
   useEffect(() => {
+    // Avoid overriding zones when it's initialized to an empty array, waiting for localStorage
     if (zones.length > 0) {
       const timezones = zones.map((zone) => zone.timezone);
       window.localStorage.setItem("timezones", JSON.stringify(timezones));
@@ -13,6 +14,7 @@ export const ZonesContextProvider = ({ children }) => {
   }, [zones]);
 
   const addZone = (newZone) => {
+    // Avoid storing a repeated zone
     if (!zones.find((zone) => zone.timezone === newZone.timezone)) {
       setZones((zones) => zones.concat(newZone));
     }
@@ -23,6 +25,7 @@ export const ZonesContextProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    // Update the time every 5 seconds
     const interval = setInterval(() => {
       if (zones.length > 0) {
         const newZones = zones.map((zone) => {

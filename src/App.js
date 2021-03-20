@@ -30,6 +30,6 @@ const Container = styled.div`
   text-align: center;
   padding: 1em;
   background-color: ${({ theme }) => theme.background};
-  height: 100vh;
+  min-height: 100vh;
   box-sizing: border-box;
 `;
