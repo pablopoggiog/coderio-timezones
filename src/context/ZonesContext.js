@@ -6,11 +6,11 @@ export const ZonesContextProvider = ({ children }) => {
   const [zones, setZones] = useState([]);
 
   const addZone = (newZone) => {
-    if (!zones.includes(newZone)) setZones((zones) => zones.concat(newZone));
+    setZones((zones) => zones.concat(newZone));
   };
 
   const removeZone = (zoneToRemove) => {
-    setZones((zones) => zones.filter((zone) => zone !== zoneToRemove));
+    setZones((zones) => zones.filter((zone) => zone.timezone !== zoneToRemove));
   };
 
   useEffect(() => {
