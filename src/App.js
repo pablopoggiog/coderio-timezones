@@ -17,5 +17,5 @@ export default App;
 
 const Container = styled.div`
   text-align: center;
-  padding: 3em;
+  padding: 1em;
 `;
