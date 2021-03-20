@@ -1,14 +1,15 @@
 import styled from "styled-components";
-import { SearchBar } from "src/components";
-import { SearchContextProvider } from "src/context/SearchContext";
+import { SearchBar, Boxes } from "src/components";
+import { ZonesContextProvider } from "src/context/ZonesContext";
 
 const App = () => {
   return (
-    <SearchContextProvider>
+    <ZonesContextProvider>
       <Container>
         <SearchBar />
+        <Boxes />
       </Container>
-    </SearchContextProvider>
+    </ZonesContextProvider>
   );
 };
 
@@ -16,4 +17,5 @@ export default App;
 
 const Container = styled.div`
   text-align: center;
+  padding: 3em;
 `;
