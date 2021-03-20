@@ -32,4 +32,5 @@ const Container = styled.div`
   background-color: ${({ theme }) => theme.background};
   min-height: 100vh;
   box-sizing: border-box;
+  transition: 0.6s;
 `;
