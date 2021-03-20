@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { ZonesContext } from "src/context/ZonesContext";
+import { ZonesContext } from "src/context";
 import { Container, Bar } from "./styles";
 
 export const SearchBar = () => {

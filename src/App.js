@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SearchBar, Boxes } from "src/components";
-import { ZonesContextProvider } from "src/context/ZonesContext";
+import { ZonesContextProvider } from "src/context";
 
 const App = () => {
   return (

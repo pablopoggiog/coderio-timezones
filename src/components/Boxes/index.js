@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Box } from "src/components";
-import { ZonesContext } from "src/context/ZonesContext";
+import { ZonesContext } from "src/context";
 import { Container } from "./styles";
 
 export const Boxes = () => {
