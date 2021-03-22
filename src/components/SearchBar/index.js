@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useSearch } from "src/hooks";
+import { ZonesContext } from "src/context";
 import { Container, Bar, Suggestions, Suggestion } from "./styles";
 
 export const SearchBar = () => {
-  const {
-    query,
-    setQuery,
-    suggestions,
-    setSuggestions,
-    fetchZone,
-  } = useSearch();
+  const { query, setQuery, suggestions, setSuggestions } = useSearch();
+
+  const { addZone, zones } = useContext(ZonesContext);
+
+  const filteredSuggestions = suggestions.filter(
+    (suggestion) => !zones.includes(suggestion)
+  );
 
   return (
     <Container>
@@ -19,14 +20,14 @@ export const SearchBar = () => {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      {suggestions.length > 0 && (
+      {filteredSuggestions.length > 0 && (
         <Suggestions>
-          {suggestions.map((suggestion, index) => (
+          {filteredSuggestions.map((suggestion, index) => (
             <Suggestion
               key={index}
               onClick={() => {
-                // Fetches the selected suggestion, reset query and suggestions
-                fetchZone(suggestion);
+                // Add a box with for selected suggestion, reset query and suggestions
+                addZone(suggestion);
                 setQuery("");
                 setSuggestions([]);
               }}

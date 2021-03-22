@@ -16,7 +16,7 @@ export const Container = styled.div`
   width: 100%;
   background-image: url(${dots});
   border-radius: 10px;
-  border: 1px dotted darkgrey;
+  border: 1.5px solid darkgrey;
   animation: ${fadeIn} 0.6s ease 1;
   transition: 0.6s;
 
