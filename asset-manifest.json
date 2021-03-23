@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/coderio-timezones/static/css/main.2ae47eeb.chunk.css",
-    "main.js": "/coderio-timezones/static/js/main.70c55831.chunk.js",
-    "main.js.map": "/coderio-timezones/static/js/main.70c55831.chunk.js.map",
+    "main.js": "/coderio-timezones/static/js/main.4c143f72.chunk.js",
+    "main.js.map": "/coderio-timezones/static/js/main.4c143f72.chunk.js.map",
     "runtime-main.js": "/coderio-timezones/static/js/runtime-main.430b574d.js",
     "runtime-main.js.map": "/coderio-timezones/static/js/runtime-main.430b574d.js.map",
     "static/js/2.d6ff50f2.chunk.js": "/coderio-timezones/static/js/2.d6ff50f2.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.430b574d.js",
     "static/js/2.d6ff50f2.chunk.js",
     "static/css/main.2ae47eeb.chunk.css",
-    "static/js/main.70c55831.chunk.js"
+    "static/js/main.4c143f72.chunk.js"
   ]
 }
