@@ -5,6 +5,7 @@ export const useDate = (timezone) => {
   const [date, setDate] = useState("");
 
   useEffect(() => {
+    // Updates time every 1 second
     if (timezone)
       setInterval(() => {
         const currentTime = new Date(),

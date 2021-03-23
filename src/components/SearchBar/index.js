@@ -8,9 +8,10 @@ export const SearchBar = () => {
 
   const { addZone, zones } = useContext(ZonesContext);
 
-  const filteredSuggestions = suggestions.filter(
-    (suggestion) => !zones.includes(suggestion)
-  );
+  // I show only the first 25 suggestions
+  const filteredSuggestions = suggestions
+    .filter((suggestion) => !zones.includes(suggestion))
+    .slice(0, 20);
 
   return (
     <Container>
