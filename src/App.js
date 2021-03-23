@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
-import { SearchBar, Boxes, Toggler } from "src/components";
+import { SearchBar, Boxes, Toggler, Error } from "src/components";
 import { ZonesContextProvider } from "src/context";
 import { lightTheme, darkTheme } from "src/theme";
+import { useSearch } from "src/hooks";
 
 const App = () => {
   const [theme, setTheme] = useState("dark");
+
+  const { newtorkError } = useSearch();
 
   const themeToggler = () =>
     theme === "light" ? setTheme("dark") : setTheme("light");
@@ -15,6 +18,7 @@ const App = () => {
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <ZonesContextProvider>
         <Container>
+          {newtorkError && <Error />}
           <Toggler toggleTheme={themeToggler} />
           <SearchBar />
           <Boxes />
